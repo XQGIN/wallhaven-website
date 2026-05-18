@@ -6,7 +6,11 @@ compatibility_date = "2024-01-01"
 command = "npm run build"
 output_directory = "dist"
 
-# 可选：自定义路由规则
-# [[routes]]
-# pattern = "/*"
-# script = ""
+# 安全相关的 HTTP 响应头配置
+[[headers]]
+for = "/*"
+[headers.values]
+X-Frame-Options = "DENY"
+X-Content-Type-Options = "nosniff"
+Referrer-Policy = "strict-origin-when-cross-origin"
+Permissions-Policy = "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"

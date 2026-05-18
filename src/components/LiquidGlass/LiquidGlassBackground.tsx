@@ -197,7 +197,11 @@ const LiquidGlassBackground: React.FC = () => {
     <div className="liquid-glass-background">
       <Canvas
         camera={{ position: [0, 0, 5], fov: 75 }}
-        gl={{ antialias: true, alpha: true }}
+        gl={{
+          antialias: true,
+          alpha: true,
+          powerPreference: 'high-performance',
+        }}
         dpr={Math.min(window.devicePixelRatio, 2)}
       >
         <GlassPlane />

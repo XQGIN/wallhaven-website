@@ -89,6 +89,8 @@ const Download: React.FC = () => {
                     key={format.name}
                     href={format.url}
                     className="download-format"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <div className="format-info">
                       <span className="format-name">{format.name}</span>
